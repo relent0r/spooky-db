@@ -476,8 +476,8 @@ def run(app_path):
 
     unit_file = load_unit_file(unit_data_path)
     unit_list = unit_file['units']
-    info('Unit List count is {0}' .format(len(unit_list)))
     unit_list = get_whitelisted(unit_list, UNIT_WHITELIST)
+    info('Unit List count post whitelist is {0}' .format(len(unit_list)))
 
     fix_properties(unit_list)
 
