@@ -476,7 +476,7 @@ def run(app_path):
 
     unit_file = load_unit_file(unit_data_path)
     unit_list = unit_file['units']
-    unit_list = get_whitelisted(unit_list, UNIT_WHITELIST)
+    #unit_list = get_whitelisted(unit_list, UNIT_WHITELIST)
 
     fix_properties(unit_list)
 
