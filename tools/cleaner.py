@@ -476,10 +476,12 @@ def run(app_path):
 
     unit_file = load_unit_file(unit_data_path)
     unit_list = unit_file['units']
-    unit_list = get_whitelisted(unit_list, UNIT_WHITELIST)
+    #unit_list = get_whitelisted(unit_list, UNIT_WHITELIST)
     info('Unit List count post whitelist is {0}' .format(len(unit_list)))
 
     fix_properties(unit_list)
+
+    info('Unit List count post fix properties {0}' .format(len(unit_list)))
 
     info('Sorting units')
     sort_unit_list(unit_list)
@@ -488,6 +490,7 @@ def run(app_path):
     for unit in unit_list:
         regroup_weapons(unit)
 
+    info('Unit List count prior to unit file save {0}' .format(len(unit_list)))
     save_unit_file(unit_file, unit_list, unit_dataFat_path)  # save for dev and debug purposes
 
     info('Slenderizing')
